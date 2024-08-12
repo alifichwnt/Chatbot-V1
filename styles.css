@@ -1,0 +1,197 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(69, 88, 65, 0.479);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    position: relative;
+    width: 400px;
+    height: 502px;
+    background-color: #f7f7f7ea;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1; /* Pastikan chat container berada di atas video */
+    margin: 0 auto; /* Centering the chat container */
+}
+
+.chat-header {
+    background-color: #1d97bd;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.chat-box {
+    height: 300px;
+    overflow-y: scroll;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.input-box {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.input-box input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.input-box button {
+    background-color: #1594dd;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.clear-chat {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12.5px;
+    margin-top: 101%;
+    margin-left: -100px;
+    float:inline-end;
+}
+
+.clear-chat:hover {
+    background-color: #ff1a1a;
+}
+
+.message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.user {
+    background-color: #e1ffc7;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.bot {
+    background-color: #fffffff5;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+.input-box button:hover {
+    background-color: #223eb9;
+}
+
+#chat-box {
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    color: gray;
+    text-align: center;
+    margin-right: 8%;
+    margin-top: 2%;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size:10px;
+}
+
+/* Gaya untuk Video Background */
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Pastikan video berada di belakang elemen lainnya */
+    background-size: cover;
+    filter: brightness(50%); /* Menggelapkan video sedikit agar teks lebih mudah dibaca */
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 20px;
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+.loading span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 2px;
+    background-color: #888;
+    border-radius: 50%;
+    animation: loading 1s infinite alternate;
+}
+
+.loading span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes loading {
+    from {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .chat-container {
+        position: relative;
+        width: 300px;
+        height: 505px;
+        background-color: #f7f7f7ea;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        z-index: 1; /* Pastikan chat container berada di atas video */
+        margin: 0 auto; /* Centering the chat container */
+    }
+
+    .clear-chat {
+        background-color: #ff4c4c;
+        color: white;
+        border: none;
+        padding: 10px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12.5px;
+        margin-top: 137%;
+        margin-left: -100px;
+        float:inline-end;
+    }
+}
