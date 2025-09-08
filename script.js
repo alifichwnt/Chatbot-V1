@@ -40,23 +40,29 @@ document.addEventListener("DOMContentLoaded", () => {
         const loadingElement = showLoading();  // Tampilkan loading bubble
 
         try {
-            const response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyCfIXziF1qrqotGSuxP358x79Crh5ID5gY", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    contents: {
-                        parts: [
-                            { text: message }
-                        ]
+            const response = await fetch(
+                "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+                {
+                    method: "POST",
+                    headers: {
+                    "Content-Type": "application/json",
+                    "X-goog-api-key": "AIzaSyAdw3zs8d4QscN0jpEpuglvL92McVDAffo"  // pakai header, bukan query string
                     },
-                    generationConfig: {
+                    body: JSON.stringify({
+                      contents: [
+                        {
+                            parts: [
+                                { text: message }
+                            ]
+                        }
+                      ],
+                      generationConfig: {
                         temperature: 0.5,
                         maxOutputTokens: 1024
                     }
                 })
-            });
+              }
+            );
 
             if (!response.ok) {
                 removeLoading(loadingElement);  // Hapus loading bubble
@@ -89,3 +95,4 @@ document.addEventListener("DOMContentLoaded", () => {
         chatBox.innerHTML = "";  // Mengosongkan isi chat box
     });
 });
+
